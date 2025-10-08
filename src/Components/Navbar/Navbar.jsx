@@ -1,6 +1,6 @@
 import React from "react";
 import { Github } from "lucide-react";
-import { Link } from "react-router";
+import { Link, NavLink } from "react-router";
 
 export const Navbar = () => {
   const menus = [
@@ -71,21 +71,19 @@ export const Navbar = () => {
         <ul className="menu-horizontal px-1 flex gap-8">
           {menus.map((menu, index) => {
             return (
-              <Link to={menu.path}>
-                <li
-                  key={index}
-                  className="text-base text-[#000000] hover:text-[#632EE3] font-semibold leading-[152%] border-b-2 border-transparent hover:border-[#9F62F2] transition-all duration-300"
-                >
-                  <a className="">{menu.name}</a>
+              <NavLink key={index} to={menu.path}>
+                <li className="text-base text-[#000000] hover:text-[#632EE3] font-semibold leading-[152%] border-b-2 border-transparent hover:border-[#9F62F2] transition-all duration-300">
+                  <p>{menu.name}</p>
                 </li>
-              </Link>
+              </NavLink>
             );
           })}
         </ul>
       </div>
       <div className="navbar-end">
         <a
-          className="btn text-base shadow-none text-white font-semibold bg-linear-to-r from-[#632EE3] to-[#9F62F2] border-0 flex gap-2.5 rounded-[4px] px-4 py-3"
+          className="btn text-base shadow-none text-white font-semibold bg-linear-to-r from-[#632EE3] to-[#9F62F2]
+          border-0 flex gap-2.5 rounded-[4px] px-4 py-3 transition duration-300 ease-in transform hover:scale-105"
           href="https://github.com/ak-azad-dev"
           target="_blank"
         >

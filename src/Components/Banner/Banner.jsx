@@ -17,7 +17,8 @@ export const Banner = () => {
       </p>
       <div className="flex justify-center gap-4 pt-10">
         <a
-          className="btn shadow-none border-1 border-[#D2D2D2] bg-transparent text-[20px] font-semibold text-[#001931] px-5 py-4 rounded-[4px] flex gap-3"
+          className="btn shadow-none border-1 border-[#D2D2D2] bg-transparent text-[20px] font-semibold text-[#001931]
+          px-5 py-4 rounded-[4px] flex gap-3 transition duration-300 ease-in transform hover:scale-105"
           href="https://play.google.com/store/games?hl=en"
           target="_blank"
         >
@@ -30,7 +31,8 @@ export const Banner = () => {
           Google Play
         </a>
         <a
-          className="btn shadow-none border-1 border-[#D2D2D2] bg-transparent text-[20px] font-semibold text-[#001931] px-5 py-4 rounded-[4px] flex gap-3"
+          className="btn shadow-none border-1 border-[#D2D2D2] bg-transparent text-[20px] font-semibold text-[#001931]
+          px-5 py-4 rounded-[4px] flex gap-3 transition duration-300 ease-in transform hover:scale-105"
           href="https://www.apple.com/app-store/"
           target="_blank"
         >
