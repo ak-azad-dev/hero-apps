@@ -1,20 +1,24 @@
 import React from "react";
 import { Github } from "lucide-react";
+import { Link } from "react-router";
 
 export const Navbar = () => {
   const menus = [
     {
       name: "Home",
+      path: "/",
     },
     {
       name: "Apps",
+      path: "/apps",
     },
     {
       name: "Installation",
+      path: "/installation",
     },
   ];
   return (
-    <div className="navbar bg-[#FFFFFF] shadow-sm border-1 border-b-[#E9E9E9] h-[78px] md:px-10">
+    <div className="navbar bg-[#FFFFFF] shadow-sm border-1 border-b-[#E9E9E9] h-[78px] mx-auto md:px-10 fixed top-0 left-0 w-full z-[999]">
       <div className="navbar-start">
         <div className="dropdown">
           <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
@@ -67,20 +71,24 @@ export const Navbar = () => {
         <ul className="menu-horizontal px-1 flex gap-8">
           {menus.map((menu, index) => {
             return (
-              <li
-                key={index}
-                className="text-base text-[#000000] hover:text-[#632EE3] font-semibold leading-[152%] border-b-2 border-transparent hover:border-[#9F62F2] transition-all duration-300"
-              >
-                <a className="" href="#">
-                  {menu.name}
-                </a>
-              </li>
+              <Link to={menu.path}>
+                <li
+                  key={index}
+                  className="text-base text-[#000000] hover:text-[#632EE3] font-semibold leading-[152%] border-b-2 border-transparent hover:border-[#9F62F2] transition-all duration-300"
+                >
+                  <a className="">{menu.name}</a>
+                </li>
+              </Link>
             );
           })}
         </ul>
       </div>
       <div className="navbar-end">
-        <a className="btn text-base text-white font-semibold bg-linear-to-r from-[#632EE3] to-[#9F62F2] border-0 flex gap-2.5 rounded-[4px] px-4 py-3">
+        <a
+          className="btn text-base shadow-none text-white font-semibold bg-linear-to-r from-[#632EE3] to-[#9F62F2] border-0 flex gap-2.5 rounded-[4px] px-4 py-3"
+          href="https://github.com/ak-azad-dev"
+          target="_blank"
+        >
           <Github />
           Contribute
         </a>
