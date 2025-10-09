@@ -90,7 +90,7 @@
     ]
   },
   {
-    "image": "https://images.seeklogo.com/logo-png/43/2/capcut-logo-png_seeklogo-437025.png",
+    "image": "https://static.vecteezy.com/system/resources/previews/055/030/388/non_2x/capcut-circle-icon-logo-symbol-free-png.png",
     "title": "CapCut",
     "companyName": "ByteDance",
     "id": 6,
@@ -144,7 +144,7 @@
     ]
   },
   {
-    "image": "https://upload.wikimedia.org/wikipedia/commons/4/4e/Netflix_2015_logo.svg",
+    "image": "https://static.vecteezy.com/system/resources/previews/017/396/804/non_2x/netflix-mobile-application-logo-free-png.png",
     "title": "Netflix",
     "companyName": "Netflix, Inc.",
     "id": 9,
@@ -162,7 +162,7 @@
     ]
   },
   {
-    "image": "https://upload.wikimedia.org/wikipedia/commons/7/7a/Google_Maps_logo.svg",
+    "image": "https://static.vecteezy.com/system/resources/previews/016/716/478/non_2x/google-maps-icon-free-png.png",
     "title": "Google Maps",
     "companyName": "Google LLC",
     "id": 10,
@@ -180,7 +180,7 @@
     ]
   },
   {
-    "image": "https://upload.wikimedia.org/wikipedia/commons/4/4e/Zoom_communications_logo.svg",
+    "image": "https://static.vecteezy.com/system/resources/thumbnails/012/871/376/small_2x/zoom-logo-in-blue-colors-meetings-app-logotype-illustration-free-png.png",
     "title": "Zoom",
     "companyName": "Zoom Video Communications",
     "id": 11,
@@ -198,7 +198,7 @@
     ]
   },
   {
-    "image": "https://upload.wikimedia.org/wikipedia/commons/4/4f/Amazon_logo.svg",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/d/de/Amazon_icon.png",
     "title": "Amazon",
     "companyName": "Amazon.com, Inc.",
     "id": 12,
@@ -215,7 +215,7 @@
       { "name": "5 star", "count": 500000 }
     ]
   },  {
-    "image": "https://upload.wikimedia.org/wikipedia/commons/c/cd/Snapchat_logo.svg",
+    "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRFG0aHEi4eHo8KArYfF_bgvFrP1k84hAJzTw&s",
     "title": "Snapchat",
     "companyName": "Snap Inc.",
     "id": 13,
@@ -233,7 +233,7 @@
     ]
   },
   {
-    "image": "https://upload.wikimedia.org/wikipedia/commons/d/d0/LinkedIn_Logo.svg",
+    "image": "https://uxwing.com/wp-content/themes/uxwing/download/brands-and-social-media/linkedin-app-icon.png",
     "title": "LinkedIn",
     "companyName": "Microsoft Corporation",
     "id": 14,
@@ -251,7 +251,7 @@
     ]
   },
   {
-    "image": "https://upload.wikimedia.org/wikipedia/commons/5/51/Twitter_logo.svg",
+    "image": "https://uxwing.com/wp-content/themes/uxwing/download/brands-and-social-media/twitter-app-icon.png",
     "title": "Twitter",
     "companyName": "X Corp.",
     "id": 15,
@@ -269,7 +269,7 @@
     ]
   },
   {
-    "image": "https://upload.wikimedia.org/wikipedia/commons/5/5e/Reddit_logo_new.svg",
+    "image": "https://cdn3.iconfinder.com/data/icons/2018-social-media-logotypes/1000/2018_social_media_popular_app_logo_reddit-512.png",
     "title": "Reddit",
     "companyName": "Reddit Inc.",
     "id": 16,
@@ -287,7 +287,7 @@
     ]
   },
   {
-    "image": "https://upload.wikimedia.org/wikipedia/commons/a/a9/Google_Chrome_icon_%282011%29.png",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e1/Google_Chrome_icon_%28February_2022%29.svg/2048px-Google_Chrome_icon_%28February_2022%29.svg.png",
     "title": "Chrome",
     "companyName": "Google LLC",
     "id": 17,
@@ -305,7 +305,7 @@
     ]
   },
   {
-    "image": "https://upload.wikimedia.org/wikipedia/commons/8/83/PayPal_logo.svg",
+    "image": "https://cdn-icons-png.flaticon.com/512/174/174861.png",
     "title": "PayPal",
     "companyName": "PayPal Holdings, Inc.",
     "id": 18,
@@ -323,7 +323,7 @@
     ]
   },
   {
-    "image": "https://upload.wikimedia.org/wikipedia/commons/6/6b/Dropbox_logo_2017.svg",
+    "image": "https://static.vecteezy.com/system/resources/previews/017/395/359/non_2x/dropbox-mobile-apps-icon-free-png.png",
     "title": "Dropbox",
     "companyName": "Dropbox, Inc.",
     "id": 19,
@@ -341,7 +341,7 @@
     ]
   },
   {
-    "image": "https://upload.wikimedia.org/wikipedia/commons/5/5f/Adobe_Photoshop_Express_icon.png",
+    "image": "https://cdn-icons-png.flaticon.com/256/5968/5968503.png",
     "title": "Photoshop Express",
     "companyName": "Adobe Inc.",
     "id": 20,

@@ -1,8 +1,10 @@
 import React from "react";
 import { Github } from "lucide-react";
 import { Link, NavLink } from "react-router";
+import { useLocation } from "react-router";
 
 export const Navbar = () => {
+  const location = useLocation();
   const menus = [
     {
       name: "Home",
@@ -43,12 +45,17 @@ export const Navbar = () => {
             className="menu menu-sm dropdown-content bg-base-100 rounded-box z-1 mt-3 w-52 p-2 shadow"
           >
             {menus.map((menu, index) => {
+              const isActive = location.pathname === menu.path;
               return (
                 <li
                   key={index}
-                  className="text-base text-[#000000] hover:text-[#632EE3] font-semibold leading-[152%] border-b-2 border-transparent hover:border-[#9F62F2] transition-all duration-300"
+                  className={`text-base font-semibold leading-[152%] border-b-2 transition-all duration-300 ${
+                    isActive
+                      ? "text-[#632EE3] border-[#9F62F2]"
+                      : "text-[#000000] border-transparent hover:text-[#632EE3] hover:border-[#9F62F2]"
+                  }`}
                 >
-                  <a className="">{menu.name}</a>
+                  <Link to={menu.path}>{menu.name}</Link>
                 </li>
               );
             })}
@@ -70,12 +77,18 @@ export const Navbar = () => {
       <div className="navbar-center hidden lg:flex">
         <ul className="menu-horizontal px-1 flex gap-8">
           {menus.map((menu, index) => {
+            const isActive = location.pathname === menu.path;
             return (
-              <NavLink key={index} to={menu.path}>
-                <li className="text-base text-[#000000] hover:text-[#632EE3] font-semibold leading-[152%] border-b-2 border-transparent hover:border-[#9F62F2] transition-all duration-300">
-                  <p>{menu.name}</p>
-                </li>
-              </NavLink>
+              <li
+                key={index}
+                className={`text-base font-semibold leading-[152%] border-b-2 transition-all duration-300 ${
+                  isActive
+                    ? "text-[#632EE3] border-[#9F62F2]"
+                    : "text-[#000000] border-transparent hover:text-[#632EE3] hover:border-[#9F62F2]"
+                }`}
+              >
+                <Link to={menu.path}>{menu.name}</Link>
+              </li>
             );
           })}
         </ul>
