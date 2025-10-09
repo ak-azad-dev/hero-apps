@@ -1,0 +1,157 @@
+import React, { useEffect } from "react";
+import { useLoaderData, useLocation, useParams } from "react-router";
+import {
+  ComposedChart,
+  Line,
+  Area,
+  Bar,
+  XAxis,
+  YAxis,
+  CartesianGrid,
+  Tooltip,
+  Legend,
+  ResponsiveContainer,
+} from "recharts";
+
+const Details = () => {
+  const { id } = useParams();
+  const appId = parseInt(id);
+  const apps = useLoaderData();
+  const appDetails = apps.find((app) => (app.id === appId));
+  const {
+    image,
+    title,
+    companyName,
+    description,
+    size,
+    reviews,
+    ratingAvg,
+    downloads,
+    ratings,
+  } = appDetails;
+  const pathname = useLocation();
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [pathname]);
+
+  return (
+    <div className="mt-[160px] mb-[40px] px-10 w-full md:max-w-[1440px] mx-auto">
+      <div className="grid grid-cols-[300px_1fr] gap-[40px]">
+        <img
+          src={image}
+          alt="App Image"
+          height={350}
+          width={350}
+          className="object-cover"
+        />
+        <div>
+          <h1 className="text-[32px] font-bold text-[#001931]">{title}</h1>
+          <p className="text-[20px] font-normal text-[#627382] leading-8 mt-2.5">
+            Developed by{" "}
+            <span className="font-semibold bg-gradient-to-r from-[#632EE3] to-[#9F62F2] text-transparent bg-clip-text">
+              <a href="#">{companyName}</a>
+            </span>
+          </p>
+          <div className="flex w-full flex-col mt-[10px]">
+            <div className="divider before:bg-[#C4C9CE] after:bg-[#C4C9CE]"></div>
+          </div>
+          <div className="mt-[10px] flex gap-12">
+            <div>
+              <img
+                src="/src/assets/icon-downloads.png"
+                alt="Download Icon"
+                height={40}
+                width={40}
+              />
+              <div className="stat-title text-base font-normal leading-6 text-[#001931] py-2">
+                Downloads
+              </div>
+              <div className="stat-value text-[40px] font-extrabold leading-10 text-[#001931]">
+                {downloads}
+              </div>
+            </div>
+
+            <div>
+              <img
+                src="/src/assets/icon-ratings.png"
+                alt="Rating Icon"
+                height={40}
+                width={40}
+              />
+              <div className="stat-title text-base font-normal leading-6 text-[#001931] py-2">
+                Average Ratings
+              </div>
+              <div className="stat-value text-[40px] font-extrabold leading-10 text-[#001931]">
+                {ratingAvg}
+              </div>
+            </div>
+
+            <div>
+              <img
+                src="/src/assets/icon-review.png"
+                alt="Review Icon"
+                height={40}
+                width={40}
+              />
+              <div className="stat-title text-base font-normal leading-6 text-[#001931] py-2">
+                Total Reviews
+              </div>
+              <div className="stat-value text-[40px] font-extrabold leading-10 text-[#001931]">
+                {reviews}
+              </div>
+            </div>
+          </div>
+          <div className="w-[250px] mt-[30px]">
+            <a
+              className="btn text-[20px] shadow-none text-white font-semibold bg-linear-to-r from-[#54CF68] to-[#00827A]
+                border-0 flex gap-2.5 rounded-[4px] px-[20px] py-6 transition duration-300 ease-in transform hover:scale-105"
+            >
+              {`Install Now (${size} MB)`}
+            </a>
+          </div>
+        </div>
+      </div>
+      <div className="flex w-full flex-col mt-[10px]">
+        <div className="divider before:bg-[#C4C9CE] after:bg-[#C4C9CE]"></div>
+      </div>
+      <div>
+        <h1 className="text-[24px] font-semibold leading-8 text-[#001931] mb-6">
+          Ratings
+        </h1>
+        <ResponsiveContainer height={400}>
+          <ComposedChart
+            layout="vertical"
+            width={500}
+            height={400}
+            data={ratings.sort((a, b) => b.count - a.count)}
+            margin={{
+              top: 20,
+              right: 20,
+              bottom: 20,
+            }}
+          >
+            <CartesianGrid stroke="#f5f5f5" />
+            <XAxis type="number" />
+            <YAxis dataKey="name" type="category" scale="band" />
+            <Tooltip />
+            <Bar dataKey="count" barSize={20} fill="#FF8811" />
+          </ComposedChart>
+        </ResponsiveContainer>
+      </div>
+      <div className="flex w-full flex-col mt-[10px]">
+        <div className="divider before:bg-[#C4C9CE] after:bg-[#C4C9CE]"></div>
+      </div>
+      <div className="mt-[20px]">
+        <h1 className="text-[24px] font-semibold leading-8 text-[#001931]">
+          Description
+        </h1>
+        <p className="text-[20px] font-normal leading-8 text-[#627382] mt-4">
+          {description}
+        </p>
+      </div>
+    </div>
+  );
+};
+
+export default Details;

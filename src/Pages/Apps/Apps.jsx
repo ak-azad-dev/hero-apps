@@ -7,7 +7,7 @@ import { Suspense } from "react";
 const Apps = () => {
   const apps = useLoaderData();
   const [searchTerm, setSearchTerm] = useState("");
-  const [filteredApps, setFilteredApps] = useState(apps);
+  const [filteredApps, setFilteredApps] = useState([]);
   const [loading, setLoading] = useState(false);
 
   useEffect(() => {
