@@ -18,7 +18,7 @@ export const Banner = () => {
         simpler, smarter, and more exciting. <br /> Our goal is to turn your
         ideas into digital experiences that truly make an impact.
       </p>
-      <div className="flex md: flex-col justify-center gap-4 pt-10">
+      <div className="lg:flex grid grid-cols-1 justify-center gap-4 pt-10 pb-10">
         <a
           className="btn shadow-none border-1 border-[#D2D2D2] bg-transparent text-[20px] font-semibold text-[#001931]
           px-5 py-4 rounded-[4px] flex gap-3 transition duration-300 ease-in transform hover:scale-105"
