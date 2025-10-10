@@ -1,10 +1,11 @@
 import React from 'react'
 import { Link } from 'react-router';
+import Error404 from "../../assets/error-404.png";
 
 const ErrorPage = () => {
   return (
     <div className="mt-[120px] mb-[40px] px-10 w-full md:max-w-[1440px] mx-auto text-center flex flex-col justify-center items-center">
-      <img src="/src/assets/error-404.png" alt="Error 404 Page Image" />
+      <img src={Error404} alt="Error 404 Page Image" />
       <h1 className="text-[48px] font-semibold leading-[60px] text-[#001931] mt-[20px]">
         Oops, page not found!
       </h1>

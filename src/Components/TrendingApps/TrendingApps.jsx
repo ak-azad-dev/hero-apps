@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { Download } from "lucide-react";
 import AppCard from "../AppCard/AppCard";
 import { Link } from "react-router";
+import Logo from "../../assets/logo.png";
 
 const TrendingApps = ({ apps }) => {
   const [filteredApps, setFilteredApps] = useState(apps);
@@ -30,7 +31,7 @@ const TrendingApps = ({ apps }) => {
         <div className="flex justify-center text-3xl text-black font-bold">
           L{" "}
           <img
-            src="/src/assets/logo.png"
+            src={Logo}
             alt="Loading Image"
             className="animate-spin"
             height={45}
@@ -39,7 +40,7 @@ const TrendingApps = ({ apps }) => {
           ADING
         </div>
       ) : (
-        <div className="card-section grid grid-cols-4 gap-6 mt-[40px]">
+        <div className="card-section grid grid-cols-1 md:grid-cols-4 gap-6 mt-[40px]">
           {filteredApps.map((app) => (
             <AppCard key={app.id} app={app} />
           ))}

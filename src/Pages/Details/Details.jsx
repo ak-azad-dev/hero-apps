@@ -13,6 +13,10 @@ import {
   ResponsiveContainer,
 } from "recharts";
 import { toast } from "react-toastify";
+import ErrorPageImage from "../../assets/App-Error.png";
+import DownloadIcon from "../../assets/icon-downloads.png";
+import RatingIcon from "../../assets/icon-ratings.png";
+import ReviewIcon from "../../assets/icon-review.png";
 
 const Details = () => {
   const { id } = useParams();
@@ -38,7 +42,7 @@ const Details = () => {
   if (!appDetails) {
     return (
       <div className="mt-[120px] mb-[40px] px-10 w-full md:max-w-[1440px] mx-auto text-center flex flex-col justify-center items-center">
-        <img src="/src/assets/App-Error.png" alt="App Error Image" />
+        <img src={ErrorPageImage} alt="App Error Image" />
         <h1 className="text-[48px] font-semibold leading-[60px] text-[#001931] mt-[20px]">
           OOPS!! APP NOT FOUND
         </h1>
@@ -108,7 +112,7 @@ const Details = () => {
           <div className="mt-[10px] flex gap-12">
             <div>
               <img
-                src="/src/assets/icon-downloads.png"
+                src={DownloadIcon}
                 alt="Download Icon"
                 height={40}
                 width={40}
@@ -123,7 +127,7 @@ const Details = () => {
 
             <div>
               <img
-                src="/src/assets/icon-ratings.png"
+                src={RatingIcon}
                 alt="Rating Icon"
                 height={40}
                 width={40}
@@ -138,7 +142,7 @@ const Details = () => {
 
             <div>
               <img
-                src="/src/assets/icon-review.png"
+                src={ReviewIcon}
                 alt="Review Icon"
                 height={40}
                 width={40}

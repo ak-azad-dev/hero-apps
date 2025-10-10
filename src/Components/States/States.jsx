@@ -3,10 +3,10 @@ import React from 'react'
 const States = () => {
   return (
     <div className="bg-gradient-to-r from-[#632EE3] to-[#9F62F2] text-center py-[80px]">
-      <h1 className="text-5xl font-bold text-white">
+      <h1 className="text-3xl md:text-5xl font-bold text-white">
         Trusted by Millions, Built for You
       </h1>
-      <div className="stats pt-[40px] flex justify-center gap-40">
+      <div className="lg:stats pt-[40px] grid grid-cols-1 lg:flex justify-center gap-20 lg:gap-40">
         <div className="">
           <div className="stat-title text-base font-normal leading-6 text-white">
             Total Downloads

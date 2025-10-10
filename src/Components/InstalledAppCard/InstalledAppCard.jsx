@@ -1,6 +1,7 @@
 import React from "react";
 import { Download } from "lucide-react";
 import { toast } from "react-toastify";
+import RatingIcon from "../../assets/icon-ratings.png";
 
 const InstalledAppCard = ({ installedApp, setInstalledApps, setCount }) => {
   const { image, title, size, ratingAvg, downloads } = installedApp;
@@ -37,11 +38,7 @@ const InstalledAppCard = ({ installedApp, setInstalledApps, setCount }) => {
                   {downloads}
                 </li>
                 <li className="flex gap-1 items-center text-[#FF8811] text-base font-medium">
-                  <img
-                    src="/src/assets/icon-ratings.png"
-                    height={14}
-                    width={14}
-                  />
+                  <img src={RatingIcon} height={14} width={14} />
                   {ratingAvg}
                 </li>
                 <li className="text-[#627382] text-base font-normal">

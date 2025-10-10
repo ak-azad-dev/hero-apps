@@ -8,7 +8,7 @@
     "size": 200,
     "reviews": "50K",
     "ratingAvg": 4.8,
-    "downloads": "1B",
+    "downloads": "1000M",
     "ratings": [
       { "name": "1 star", "count": 50000 },
       { "name": "2 star", "count": 100000 },
@@ -305,7 +305,7 @@
     ]
   },
   {
-    "image": "https://cdn-icons-png.flaticon.com/512/174/174861.png",
+    "image": "https://wallpapers.com/images/thumbnail/iconic-paypal-logo-hz1p638jayet7nyc.webp",
     "title": "PayPal",
     "companyName": "PayPal Holdings, Inc.",
     "id": 18,
@@ -341,7 +341,7 @@
     ]
   },
   {
-    "image": "https://cdn-icons-png.flaticon.com/256/5968/5968503.png",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3f/Adobe_Photoshop_Express_logo_%282020%29.svg/1024px-Adobe_Photoshop_Express_logo_%282020%29.svg.png?20200617142930",
     "title": "Photoshop Express",
     "companyName": "Adobe Inc.",
     "id": 20,

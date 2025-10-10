@@ -2,6 +2,7 @@ import React from "react";
 import { Github } from "lucide-react";
 import { Link, NavLink } from "react-router";
 import { useLocation } from "react-router";
+import Logo from "../../assets/logo.png";
 
 export const Navbar = () => {
   const location = useLocation();
@@ -23,7 +24,11 @@ export const Navbar = () => {
     <div className="navbar bg-[#FFFFFF] shadow-sm border-1 border-b-[#E9E9E9] h-[78px] mx-auto md:px-10 fixed top-0 left-0 w-full z-[999]">
       <div className="navbar-start">
         <div className="dropdown">
-          <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
+          <div
+            tabIndex={0}
+            role="button"
+            className="btn btn-ghost lg:hidden bg-transparent border-none p-2 text-[#000] hover:bg-transparent hover:border-none hover:shadow-none"
+          >
             <svg
               xmlns="http://www.w3.org/2000/svg"
               className="h-5 w-5"
@@ -42,7 +47,7 @@ export const Navbar = () => {
           </div>
           <ul
             tabIndex={0}
-            className="menu menu-sm dropdown-content bg-base-100 rounded-box z-1 mt-3 w-52 p-2 shadow"
+            className="menu menu-sm dropdown-content bg-white rounded-box z-1 mt-3 w-52 p-2 shadow"
           >
             {menus.map((menu, index) => {
               const isActive = location.pathname === menu.path;
@@ -62,15 +67,10 @@ export const Navbar = () => {
           </ul>
         </div>
         <a
-          className="text-[20px] font-bold leading-6 flex justify-center items-center gap-2 bg-gradient-to-r from-[#632EE3] to-[#9F62F2] text-transparent bg-clip-text"
+          className="text-[18px] md:text-[20px] font-bold leading-6 flex justify-center items-center gap-2 bg-gradient-to-r from-[#632EE3] to-[#9F62F2] text-transparent bg-clip-text"
           href="/"
         >
-          <img
-            src="/src/assets/logo.png"
-            alt="App Logo"
-            height={40}
-            width={40}
-          />
+          <img src={Logo} alt="App Logo" height={40} width={40} />
           SwiftApps
         </a>
       </div>
@@ -93,7 +93,7 @@ export const Navbar = () => {
           })}
         </ul>
       </div>
-      <div className="navbar-end">
+      <div className="navbar-end hidden md:flex">
         <a
           className="btn text-base shadow-none text-white font-semibold bg-linear-to-r from-[#632EE3] to-[#9F62F2]
           border-0 flex gap-2.5 rounded-[4px] px-4 py-3 transition duration-300 ease-in transform hover:scale-105"

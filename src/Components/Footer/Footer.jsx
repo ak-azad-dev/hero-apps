@@ -1,4 +1,5 @@
 import React from 'react'
+import Logo from "../../assets/logo.png";
 
 const Footer = () => {
   return (
@@ -57,12 +58,7 @@ const Footer = () => {
           </div>
         </nav>
         <aside>
-          <img
-            src="/src/assets/logo.png"
-            alt="App Logo"
-            height={50}
-            width={50}
-          />
+          <img src={Logo} alt="App Logo" height={50} width={50} />
           <p className="font-bold">
             SwiftApps
             <br />

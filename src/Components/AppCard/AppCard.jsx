@@ -1,6 +1,7 @@
 import React from 'react'
 import { Download } from "lucide-react";
 import { Link } from 'react-router';
+import RatingIcon from "../../assets/icon-ratings.png";
 
 const AppCard = ({ app }) => {
   const { id, image, title, downloads, ratingAvg } = app;
@@ -24,12 +25,7 @@ const AppCard = ({ app }) => {
               {downloads}
             </div>
             <div className="badge bg-[#FFF0E1] border-none text-[#FF8811] text-base font-medium rounded-[4px] px-2.5 py-2">
-              <img
-                src="/src/assets/icon-ratings.png"
-                alt="Rating Icon"
-                height={12}
-                width={12}
-              />
+              <img src={RatingIcon} alt="Rating Icon" height={12} width={12} />
               {ratingAvg}
             </div>
           </div>

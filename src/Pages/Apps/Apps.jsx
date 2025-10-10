@@ -1,13 +1,19 @@
 import React, { useEffect, useState } from "react";
-import { useLoaderData } from "react-router";
+import { useLoaderData, useLocation } from "react-router";
 import AppCard from "../../Components/AppCard/AppCard";
 import { Search } from "lucide-react";
+import Logo from "../../assets/logo.png";
 
 const Apps = () => {
   const apps = useLoaderData();
   const [searchTerm, setSearchTerm] = useState("");
   const [filteredApps, setFilteredApps] = useState([]);
   const [loading, setLoading] = useState(false);
+  const pathname = useLocation();
+
+  useEffect(() => {
+      window.scrollTo(0, 0);
+    }, [pathname]);
 
   useEffect(() => {
     setLoading(true);
@@ -50,7 +56,7 @@ const Apps = () => {
         <div className="flex justify-center text-3xl text-black font-bold">
           L{" "}
           <img
-            src="/src/assets/logo.png"
+            src={Logo}
             alt="Loading Image"
             className="animate-spin"
             height={45}
@@ -61,14 +67,16 @@ const Apps = () => {
       ) : (
         <>
           {filteredApps.length != 0 ? (
-            <div className="card-section grid grid-cols-4 gap-6 mt-[20px]">
+            <div className="card-section grid grid-cols-1 lg:grid-cols-4 gap-6 mt-[20px]">
               {filteredApps.map((app) => (
                 <AppCard key={app.id} app={app} />
               ))}
             </div>
           ) : (
             <div className="text-center">
-              <h1 className="text-[#627382] text-4xl font-extrabold">No Apps Found</h1>
+              <h1 className="text-[#627382] text-4xl font-extrabold">
+                No Apps Found
+              </h1>
             </div>
           )}
         </>

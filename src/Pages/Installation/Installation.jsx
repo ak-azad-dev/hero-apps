@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { Search } from "lucide-react";
 import { useLoaderData } from "react-router";
 import InstalledAppCard from "../../Components/InstalledAppCard/InstalledAppCard";
+import Logo from "../../assets/logo.png";
 
 const Installation = () => {
   const apps = useLoaderData();
@@ -23,13 +24,20 @@ const Installation = () => {
     return () => clearTimeout(timer);
   }, [apps]);
 
-  // To sort data by app size
-  const sortLowToHigh = (e) => {
+  function parseNumber(value) {
+    const match = value.match(/^\d+/);
+    return match ? Number(match[0]) : null;
+  }
+
+  // To sort data by download count
+  const sortByDownload = (e) => {
     let results = [];
     if (e.target.value == 1) {
-      results = [...installedApps].sort((a, b) => a.size - b.size);
+      results = [...installedApps].sort((a, b) => parseNumber(b.downloads) - parseNumber(a.downloads));
     } else {
-      results = [...installedApps].sort((a, b) => b.size - a.size);
+      results = [...installedApps].sort(
+        (a, b) => parseNumber(a.downloads) - parseNumber(b.downloads)
+      );
     }
 
     setInstalledApps(results);
@@ -48,15 +56,15 @@ const Installation = () => {
           {`(${count})`} Apps Found
         </h3>
         <select
-          defaultValue="Sort By Size"
+          defaultValue="Sort By Download"
           className="select bg-white border-1 border-[#D2D2D2] text-[#627382] w-[200px]"
         >
-          <option disabled={true}>Sort By Size</option>
-          <option value={1} onClick={(e) => sortLowToHigh(e)}>
-            Low - High
+          <option disabled={true}>Sort By Download</option>
+          <option value={1} onClick={(e) => sortByDownload(e)}>
+            High-Low
           </option>
-          <option value={2} onClick={(e) => sortLowToHigh(e)}>
-            High - Low
+          <option value={2} onClick={(e) => sortByDownload(e)}>
+            Low-High
           </option>
         </select>
       </div>
@@ -64,7 +72,7 @@ const Installation = () => {
         <div className="flex justify-center text-3xl text-black font-bold">
           L{" "}
           <img
-            src="/src/assets/logo.png"
+            src={Logo}
             alt="Loading Image"
             className="animate-spin"
             height={45}
