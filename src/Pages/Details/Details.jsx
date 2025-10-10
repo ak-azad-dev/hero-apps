@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import { useLoaderData, useLocation, useParams } from "react-router";
+import { Link, useLoaderData, useLocation, useParams } from "react-router";
 import {
   ComposedChart,
   Line,
@@ -17,7 +17,37 @@ const Details = () => {
   const { id } = useParams();
   const appId = parseInt(id);
   const apps = useLoaderData();
-  const appDetails = apps.find((app) => (app.id === appId));
+  const appDetails = apps.find((app) => app.id === appId);
+  const pathname = useLocation();
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [pathname]);
+
+  // Early return if app not found
+  if (!appDetails) {
+    return (
+      <div className="mt-[120px] mb-[40px] px-10 w-full md:max-w-[1440px] mx-auto text-center flex flex-col justify-center items-center">
+        <img src="/src/assets/App-Error.png" alt="App Error Image" />
+        <h1 className="text-[48px] font-semibold leading-[60px] text-[#001931] mt-[20px]">
+          OOPS!! APP NOT FOUND
+        </h1>
+        <p className="text-[20px] font-normal leading-[32px] text-[#627382] mt-[10px]">
+          The app you are requesting is not found on our system. Please try
+          another app.
+        </p>
+        <Link to="/">
+          <button
+            className="btn text-base shadow-none text-white font-semibold bg-gradient-to-r from-[#632EE3] to-[#9F62F2]
+          border-0 flex gap-2.5 rounded-[4px] px-4 py-3 transition duration-300 ease-in transform hover:scale-105 mt-4"
+          >
+            Go Back!
+          </button>
+        </Link>
+      </div>
+    );
+  }
+
   const {
     image,
     title,
@@ -29,11 +59,6 @@ const Details = () => {
     downloads,
     ratings,
   } = appDetails;
-  const pathname = useLocation();
-
-  useEffect(() => {
-    window.scrollTo(0, 0);
-  }, [pathname]);
 
   return (
     <div className="mt-[160px] mb-[40px] px-10 w-full md:max-w-[1440px] mx-auto">
