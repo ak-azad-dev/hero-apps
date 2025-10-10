@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { Link, useLoaderData, useLocation, useParams } from "react-router";
 import {
   ComposedChart,
@@ -12,6 +12,7 @@ import {
   Legend,
   ResponsiveContainer,
 } from "recharts";
+import { toast } from "react-toastify";
 
 const Details = () => {
   const { id } = useParams();
@@ -24,7 +25,16 @@ const Details = () => {
     window.scrollTo(0, 0);
   }, [pathname]);
 
-  // Early return if app not found
+  const [isInstalled, setIsInstalled] = useState(false);
+
+  useEffect(() => {
+    const installedAppsId = JSON.parse(localStorage.getItem("installed")) || [];
+    if (installedAppsId.includes(appId)) {
+      setIsInstalled(true);
+    }
+  }, [appId]);
+
+  // Return if app not found
   if (!appDetails) {
     return (
       <div className="mt-[120px] mb-[40px] px-10 w-full md:max-w-[1440px] mx-auto text-center flex flex-col justify-center items-center">
@@ -59,6 +69,20 @@ const Details = () => {
     downloads,
     ratings,
   } = appDetails;
+
+  const handleInstall = (appDetails) => {
+    const installedAppsId = JSON.parse(localStorage.getItem("installed")) || [];
+    //const isInstalled = installedApps.some((app) => app.id === appDetails.id);
+
+    if (!installedAppsId.includes(appDetails.id)) {
+      const updatedApps = [...installedAppsId, appDetails.id];
+      localStorage.setItem("installed", JSON.stringify(updatedApps));
+
+      setIsInstalled(true);
+      // Display success message
+      toast.success(`${appDetails.title} installed successfully`);
+    }
+  };
 
   return (
     <div className="mt-[160px] mb-[40px] px-10 w-full md:max-w-[1440px] mx-auto">
@@ -127,13 +151,15 @@ const Details = () => {
               </div>
             </div>
           </div>
-          <div className="w-[250px] mt-[30px]">
-            <a
-              className="btn text-[20px] shadow-none text-white font-semibold bg-linear-to-r from-[#54CF68] to-[#00827A]
-                border-0 flex gap-2.5 rounded-[4px] px-[20px] py-6 transition duration-300 ease-in transform hover:scale-105"
+          <div className="mt-[30px] w-fit">
+            <button
+              onClick={() => handleInstall(appDetails)}
+              disabled={isInstalled}
+              className={`btn text-[20px] shadow-none text-white font-semibold bg-gradient-to-r from-[#54CF68] to-[#00827A] hover:scale-105"
+              border-0 flex gap-2.5 rounded-[4px] px-[20px] py-6 transition duration-300 ease-in transform`}
             >
-              {`Install Now (${size} MB)`}
-            </a>
+              {isInstalled ? `Installed` : `Install Now (${size} MB)`}
+            </button>
           </div>
         </div>
       </div>
@@ -149,7 +175,7 @@ const Details = () => {
             layout="vertical"
             width={500}
             height={400}
-            data={ratings.sort((a, b) => b.count - a.count)}
+            data={[...ratings].sort((a, b) => b.count - a.count)}
             margin={{
               top: 20,
               right: 20,

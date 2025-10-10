@@ -2,7 +2,6 @@ import React, { useEffect, useState } from "react";
 import { useLoaderData } from "react-router";
 import AppCard from "../../Components/AppCard/AppCard";
 import { Search } from "lucide-react";
-import { Suspense } from "react";
 
 const Apps = () => {
   const apps = useLoaderData();
